@@ -82,7 +82,7 @@ Institution:  KL Deemed to be University`
       case 'projects':
         newHistory.push({
           type: 'output',
-          text: projects.map((p, i) => `${i + 1}. [${p.badge}] ${p.title}\n   Tech: ${p.technologies.join(', ')}`).join('\n\n')
+          text: projects.map((p, i) => `${i + 1}. [${p.badge}] ${p.title}\n   Tech: ${p.technologies.join(', ')}${p.demo ? `\n   Live Demo: ${p.demo}` : ''}\n   GitHub: ${p.github}`).join('\n\n')
         });
         break;
 
@@ -96,14 +96,14 @@ Institution:  KL Deemed to be University`
       case 'skills':
         newHistory.push({
           type: 'output',
-          text: `Technical Interests:
-${technicalInterests.map(item => `  • ${item}`).join('\n')}
-
-Core Technologies:
-  • Python, C/C++, JavaScript, SQL, HTML5/CSS3
-  • React.js, Tailwind CSS, Vite, Framer Motion
-  • Machine Learning, Generative AI, Linear Algebra
-  • Operating Systems, File Systems, Linux, Git`
+          text: `Technical Skills by Category:
+  • Programming Languages: Java, Python, C, JavaScript, SQL
+  • Frontend: HTML, CSS, React.js
+  • Backend: Spring Boot, FastAPI, Node.js, Express.js, REST APIs
+  • Databases: PostgreSQL, MongoDB, MySQL
+  • AI/ML: Machine Learning, Deep Learning, Scikit-learn, PyTorch, Pandas, NumPy, LSTM, Generative AI, Semantic Search
+  • Systems: Operating Systems, Linux, C programming, File Systems, Write-Ahead Logging
+  • Tools: Git, GitHub, VS Code, Postman`
         });
         break;
 

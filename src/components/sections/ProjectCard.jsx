@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, ArrowRight, Layers, Sparkles } from 'lucide-react';
+import { Github, ExternalLink, ArrowRight } from 'lucide-react';
 
 export default function ProjectCard({ project, onSelect }) {
   return (
@@ -52,27 +52,45 @@ export default function ProjectCard({ project, onSelect }) {
           )}
         </div>
 
-        {/* Actions bar */}
-        <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+        {/* Actions bar with separate GitHub & Live Demo links */}
+        <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2.5">
           <button
             onClick={() => onSelect(project)}
-            className="inline-flex items-center gap-1.5 text-xs font-semibold font-heading text-primary-light hover:text-white transition-colors group/btn"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold font-heading text-primary-light hover:text-white transition-colors group/btn py-1"
           >
             <span>Deep Dive</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
           </button>
 
           <div className="flex items-center gap-2">
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-colors"
-              title="View Source on GitHub"
-              aria-label={`GitHub Repository for ${project.title}`}
-            >
-              <Github className="w-4 h-4" />
-            </a>
+            {/* Live Demo Button - only rendered if verified deployment URL exists */}
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary to-cyanAccent text-white text-xs font-semibold hover:shadow-glow-cyan hover:scale-105 transition-all duration-200 shadow-sm"
+                title="Open Live Deployment"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Live Demo</span>
+              </a>
+            )}
+
+            {/* GitHub Source Button */}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all duration-200 text-xs font-medium"
+                title="View Repository on GitHub"
+                aria-label={`GitHub Repository for ${project.title}`}
+              >
+                <Github className="w-3.5 h-3.5" />
+                <span>GitHub</span>
+              </a>
+            )}
           </div>
         </div>
       </div>

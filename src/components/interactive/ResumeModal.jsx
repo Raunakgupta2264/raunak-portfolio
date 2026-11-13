@@ -132,7 +132,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                 {techStackCategories.map(cat => (
                   <div key={cat.name} className="p-3 rounded-xl bg-white/[0.02] border border-white/10">
                     <span className="font-mono text-slate-400 block mb-1">{cat.name}:</span>
-                    <span className="text-slate-200">{cat.skills.map(s => s.name).join(', ')}</span>
+                    <span className="text-slate-200">{cat.skills.join(', ')}</span>
                   </div>
                 ))}
               </div>

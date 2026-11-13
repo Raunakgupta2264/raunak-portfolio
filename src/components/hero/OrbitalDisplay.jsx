@@ -29,10 +29,10 @@ export default function OrbitalDisplay() {
       floatAnim: { y: [0, -12, 0], x: [0, 8, 0], transition: { duration: 6.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 } }
     },
     {
-      name: 'C / C++',
+      name: 'Java',
       icon: Cpu,
-      color: 'text-blue-400',
-      bg: 'bg-blue-400/10 border-blue-400/20',
+      color: 'text-orange-400',
+      bg: 'bg-orange-400/10 border-orange-400/20',
       position: 'bottom-8 left-10',
       floatAnim: { y: [0, 10, 0], x: [0, -5, 0], transition: { duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.5 } }
     },

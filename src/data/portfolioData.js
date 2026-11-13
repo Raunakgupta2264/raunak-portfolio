@@ -28,21 +28,21 @@ export const whatIBuild = [
     title: "Full-Stack Development",
     icon: "code",
     description: "Designing end-to-end web architectures featuring responsive, fluid user interfaces and performant API layers that deliver seamless digital experiences.",
-    highlights: ["React & Modern Ecosystem", "Component-Driven Architecture", "API Integration & State Management"],
+    highlights: ["React & Modern Ecosystem", "Spring Boot & Node.js Backends", "RESTful APIs & State Management"],
   },
   {
     id: "ai-ml",
     title: "Artificial Intelligence & ML",
     icon: "brain",
     description: "Engineering intelligent predictive models and generative systems—from network attack forecasting and risk assessment to conversational AI.",
-    highlights: ["Predictive Modeling & Forecasting", "Deep Learning Foundations", "Generative AI & Agentic Workflows"],
+    highlights: ["Predictive Modeling & LSTM Forecasting", "PyTorch & Scikit-Learn Pipelines", "Generative AI & Semantic Search"],
   },
   {
     id: "systems",
     title: "Systems & Core Engineering",
     icon: "server",
     description: "Exploring low-level computing principles, crash-consistent filesystem designs, operating system internals, and mathematically rigorous algorithm design.",
-    highlights: ["Crash-Consistent Filesystem Design", "Operating System Internals", "Advanced DSA & Complexity Optimization"],
+    highlights: ["Crash-Consistent Filesystem Design", "Write-Ahead Logging (WAL)", "C Programming & Linux Kernel Concepts"],
   },
 ];
 
@@ -54,10 +54,11 @@ export const projects = [
     badge: "AI / Cybersecurity",
     description: "An intelligent security pipeline engineered to detect, classify, and forecast malicious network intrusions and anomalies in real-time, safeguarding infrastructure before perimeter compromise.",
     longDescription: "NeuroShield analyzes multidimensional network traffic patterns using machine learning algorithms to identify anomalous signatures indicative of cyber threats. By learning from traffic anomalies, the model provides early attack forecasting to preempt distributed attacks, unauthorized probes, and data breaches.",
-    technologies: ["Python", "Machine Learning", "Scikit-Learn", "Pandas", "Anomaly Detection"],
-    github: "https://github.com/raunakgupta2264",
-    demo: null,
+    technologies: ["Python", "Machine Learning", "Scikit-Learn", "Pandas", "PyTorch", "Anomaly Detection"],
+    github: "https://github.com/Raunakgupta2264/SIH26153_NeuroShield",
+    demo: "https://sih-26153-neuro-shield.vercel.app",
     highlights: [
+      "Deployed and accessible live on Vercel with interactive forecasting interface",
       "Trained on comprehensive network traffic and anomaly datasets",
       "Real-time feature extraction for proactive threat classification",
       "High precision in distinguishing legitimate traffic spikes from malicious incursions"
@@ -70,13 +71,13 @@ export const projects = [
     badge: "Systems Engineering",
     description: "A custom crash-consistent journaling filesystem implementing atomic write transactions and write-ahead metadata logging to guarantee fault-tolerant persistence.",
     longDescription: "JournaFS was developed to explore core storage engine reliability and file system crash semantics. It implements atomic metadata logging and crash recovery protocols, ensuring that unexpected power loss or system crashes never result in dangling pointers, broken inodes, or corrupted filesystem state.",
-    technologies: ["C / C++", "Operating Systems", "Linux", "File System Internals", "Data Structures"],
+    technologies: ["C", "Operating Systems", "Linux", "File Systems", "Write-Ahead Logging", "Data Structures"],
     github: "https://github.com/raunakgupta2264",
     demo: null,
     highlights: [
-      "Write-ahead metadata journaling for strict crash-consistency",
+      "Write-ahead metadata journaling (WAL) for strict crash-consistency",
       "Automated log replay and sanity recovery routines upon mount",
-      "Custom block allocation bitmap and inode hierarchy design"
+      "Custom block allocation bitmap and inode hierarchy design in C"
     ]
   },
   {
@@ -86,7 +87,7 @@ export const projects = [
     badge: "Financial Analytics",
     description: "A predictive machine learning model designed to accurately evaluate creditworthiness and mitigate default probabilities through fair, transparent financial risk analysis.",
     longDescription: "CreditFair applies rigorous data cleaning, feature engineering, and classification algorithms to evaluate loan applicants. The solution optimizes approval pipelines while minimizing bias and maximizing predictive reliability for financial institutions.",
-    technologies: ["Python", "Machine Learning", "Scikit-Learn", "Financial Modeling", "Data Analysis"],
+    technologies: ["Python", "Machine Learning", "Scikit-Learn", "Pandas", "NumPy", "Data Analysis"],
     github: "https://github.com/raunakgupta2264",
     demo: null,
     highlights: [
@@ -102,13 +103,13 @@ export const projects = [
     badge: "Conversational AI",
     description: "An interactive conversational agent delivering context-aware responses, natural dialogue comprehension, and structured query resolution.",
     longDescription: "Built to harness generative language models, this AI Chatbot manages contextual conversational memory, handles multi-turn dialogues, and provides clear, grounded responses across diverse technical and user assistance topics.",
-    technologies: ["Generative AI", "Python", "React.js", "Natural Language Processing", "APIs"],
+    technologies: ["Generative AI", "Python", "React.js", "FastAPI", "Semantic Search", "APIs"],
     github: "https://github.com/raunakgupta2264",
     demo: null,
     highlights: [
       "Context-aware conversation history tracking across multi-turn exchanges",
       "Clean, modern chat user interface with fluid typing animations",
-      "Extensible architecture for plugging into domain-specific knowledge bases"
+      "Semantic search integration for grounded responses"
     ]
   },
   {
@@ -118,7 +119,7 @@ export const projects = [
     badge: "Full-Stack Platform",
     description: "A dynamic full-stack information discovery platform that ingests, curates, and categorizes real-time global news feeds with high-speed search and filtering.",
     longDescription: "A full-featured web platform built for high-throughput news syndication. It aggregates feeds from varied journalistic sources, groups articles by categories (Technology, Science, Business), and presents them in a responsive, accessible interface with instant keyword search.",
-    technologies: ["React.js", "Tailwind CSS", "JavaScript", "REST APIs", "Modern Web Architecture"],
+    technologies: ["React.js", "Node.js", "Express.js", "HTML", "CSS", "REST APIs"],
     github: "https://github.com/raunakgupta2264",
     demo: null,
     highlights: [
@@ -188,52 +189,55 @@ export const certifications = [
 
 export const techStackCategories = [
   {
-    name: "Languages",
-    skills: [
-      { name: "Python", level: "Advanced" },
-      { name: "C / C++", level: "Proficient" },
-      { name: "JavaScript (ES6+)", level: "Proficient" },
-      { name: "SQL", level: "Proficient" },
-      { name: "HTML5 / CSS3", level: "Advanced" },
-    ]
+    name: "Programming Languages",
+    icon: "code",
+    skills: ["Java", "Python", "C", "JavaScript", "SQL"]
   },
   {
-    name: "Frontend & Web",
-    skills: [
-      { name: "React.js", level: "Proficient" },
-      { name: "Tailwind CSS", level: "Advanced" },
-      { name: "Vite", level: "Proficient" },
-      { name: "Framer Motion", level: "Proficient" },
-      { name: "REST APIs", level: "Proficient" },
-    ]
+    name: "Frontend",
+    icon: "layout",
+    skills: ["HTML", "CSS", "React.js"]
+  },
+  {
+    name: "Backend",
+    icon: "server",
+    skills: ["Spring Boot", "FastAPI", "Node.js", "Express.js", "REST APIs"]
+  },
+  {
+    name: "Databases",
+    icon: "database",
+    skills: ["PostgreSQL", "MongoDB", "MySQL"]
   },
   {
     name: "AI & Machine Learning",
+    icon: "brain",
     skills: [
-      { name: "Machine Learning", level: "Proficient" },
-      { name: "Generative AI", level: "Proficient" },
-      { name: "Linear Algebra for ML", level: "Advanced" },
-      { name: "Scikit-Learn", level: "Proficient" },
-      { name: "Anomaly Detection", level: "Proficient" },
+      "Machine Learning",
+      "Deep Learning",
+      "Scikit-learn",
+      "PyTorch",
+      "Pandas",
+      "NumPy",
+      "LSTM",
+      "Generative AI",
+      "Semantic Search"
     ]
   },
   {
-    name: "Systems & Core",
+    name: "Systems",
+    icon: "cpu",
     skills: [
-      { name: "Operating Systems", level: "Proficient" },
-      { name: "File Systems Architecture", level: "Proficient" },
-      { name: "Data Structures & Algorithms", level: "Advanced" },
-      { name: "Linux / Unix", level: "Proficient" },
+      "Operating Systems",
+      "Linux",
+      "C programming",
+      "File Systems",
+      "Write-Ahead Logging"
     ]
   },
   {
-    name: "Tools & Environments",
-    skills: [
-      { name: "Git", level: "Proficient" },
-      { name: "GitHub", level: "Proficient" },
-      { name: "VS Code", level: "Advanced" },
-      { name: "Terminal / Bash", level: "Proficient" },
-    ]
+    name: "Tools",
+    icon: "wrench",
+    skills: ["Git", "GitHub", "VS Code", "Postman"]
   }
 ];
 

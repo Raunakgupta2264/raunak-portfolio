@@ -98,15 +98,31 @@ export default function ProjectModal({ project, onClose }) {
 
             {/* Actions */}
             <div className="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-primary"
-              >
-                <Github className="w-4 h-4" />
-                <span>View Repository on GitHub</span>
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn-primary"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span>Launch Live Demo</span>
+                  </a>
+                )}
+
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={project.demo ? "btn-secondary" : "btn-primary"}
+                  >
+                    <Github className="w-4 h-4" />
+                    <span>View Repository on GitHub</span>
+                  </a>
+                )}
+              </div>
 
               <button
                 onClick={onClose}
