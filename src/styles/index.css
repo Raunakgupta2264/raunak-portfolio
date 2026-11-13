@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #030014;
+  --color-primary: #8b5cf6;
+  --color-primary-light: #a78bfa;
+  --color-cyan: #38bdf8;
+  --color-surface: rgba(20, 20, 30, 0.6);
+  --color-border: rgba(255, 255, 255, 0.08);
+}
+
+/* Custom Scrollbar */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.4) #030014;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030014;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.4);
+  border-radius: 9999px;
+  border: 2px solid #030014;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa;
+}
+
+/* Utility Classes */
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-light via-primary to-cyanAccent;
+  }
+
+  .text-gradient-cyan {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyanAccent via-sky-300 to-primary-light;
+  }
+
+  .card-glass {
+    @apply bg-surface-glass backdrop-blur-xl border border-surface-border rounded-2xl shadow-lg transition-all duration-300 relative overflow-hidden;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .card-glass:hover {
+    @apply border-primary/40 shadow-glow-sm -translate-y-1;
+    box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.5), 0 0 25px rgba(139, 92, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .card-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+    transform: skewX(-25deg);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .card-glass:hover.card-shimmer::after {
+    animation: shimmer 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .badge-primary {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase bg-primary-soft text-primary-light border border-primary/20;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-heading font-semibold text-white bg-gradient-to-r from-primary-dark to-primary hover:from-primary hover:to-primary-light transition-all duration-300 shadow-glow-sm hover:shadow-glow-md hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-heading font-semibold text-slate-200 bg-surface-glass hover:bg-white/10 border border-surface-border hover:border-primary/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 backdrop-blur-md;
+  }
+}
+
+/* Cosmic Mesh Ambient Blobs */
+.mesh-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #030014;
+}
+
+.mesh-blob-1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 65vw;
+  height: 65vw;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.16) 0%, rgba(139, 92, 246, 0) 70%);
+  filter: blur(80px);
+  will-change: transform, border-radius;
+  animation: liquidBlob 24s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+}
+
+.mesh-blob-2 {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 70vw;
+  height: 70vw;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(56, 189, 248, 0) 70%);
+  filter: blur(90px);
+  will-change: transform, border-radius;
+  animation: liquidBlob 28s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate-reverse;
+  animation-delay: -6s;
+}
+
+.mesh-blob-3 {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, rgba(124, 58, 237, 0) 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
